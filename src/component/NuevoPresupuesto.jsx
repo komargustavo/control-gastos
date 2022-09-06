@@ -5,6 +5,7 @@ import Mensaje from './Mensaje'
 const NuevoPresupuesto = ({ presupuesto, setPresupuesto }) => {
   const [mensaje, setMensaje] = useState('')
 
+  
   const handlePresupuesto = (e) => {
     e.preventDefault()
     if (!(presupuesto) || (presupuesto) < 0) {
