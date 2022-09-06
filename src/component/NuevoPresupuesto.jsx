@@ -1,5 +1,6 @@
 import { useState } from "react";
-import Mensaje from "./Mensaje"
+import Mensaje from './Mensaje'
+
 
 const NuevoPresupuesto = ({ presupuesto, setPresupuesto }) => {
   const [mensaje, setMensaje] = useState('')
@@ -21,10 +22,10 @@ const NuevoPresupuesto = ({ presupuesto, setPresupuesto }) => {
           <label>Definir Presupuesto</label>
           <input
             className="nuevo-presupuesto"
-            type="text"
-            placeholder="Añade tu Presupuesto"
+            type="number"
+            placeholder="Añade  tu Presupuesto"
             value={presupuesto}
-            onChange={(e)=> setPresupuesto(e.target.value)}
+            onChange={(e) => setPresupuesto(Number(e.target.value))}
           />
         </div>
         <input type="submit" value="Añadir" />
