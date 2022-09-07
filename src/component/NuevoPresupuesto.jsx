@@ -2,10 +2,10 @@ import { useState } from "react";
 import Mensaje from './Mensaje'
 
 
-const NuevoPresupuesto = ({ presupuesto, setPresupuesto }) => {
+const NuevoPresupuesto = ({ presupuesto, setPresupuesto, setIsValiPresupuesto }) => {
   const [mensaje, setMensaje] = useState('')
 
-  
+
   const handlePresupuesto = (e) => {
     e.preventDefault()
     if (!(presupuesto) || (presupuesto) < 0) {
@@ -13,6 +13,7 @@ const NuevoPresupuesto = ({ presupuesto, setPresupuesto }) => {
       return
     } 
       setMensaje('')
+      setIsValiPresupuesto(true)
     
   }
 
