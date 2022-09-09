@@ -1,12 +1,8 @@
 import ControlPresupuesto from "./ControlPresupuesto";
 import NuevoPresupuesto from "./NuevoPresupuesto";
 
-const Header = ({
-  presupuesto,
-  setPresupuesto,
-  isValidPresupuesto,
-  setIsValiPresupuesto,
-}) => {
+const Header = ({presupuesto,setPresupuesto,isValidPresupuesto,setIsValiPresupuesto,}) => {
+  
   return (
     <header>
       <h1>Planificador de Gastos</h1>
