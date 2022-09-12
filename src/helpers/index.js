@@ -1,3 +1,7 @@
+// Función para generar ID de un objeto
+// Funcion para formatear la fecha 
+
+
 export const generarId = () => {
   const random = Math.random().toString(36).substring(2);
   const fecha = Date.now().toString(36);
