@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Header from "./component/Header";
+import ListadoGastos from "./component/ListadoGastos";
 import Modal from "./component/Modal";
 import { generarId } from "./helpers";
 import iconoNuevoGasto from "./img/nuevo-gasto.svg";
@@ -20,13 +21,13 @@ function App() {
 
   const guardarGastos = (gasto) => {
     gasto.id = generarId();
+    gasto.fecha=Date.now()
     setGastos([...gastos, gasto]);
 
     setAnimarModal(false);
     setTimeout(() => {
       setModal(false);
     }, 500);
-
   };
 
   return (
@@ -39,13 +40,18 @@ function App() {
       />
 
       {isValidPresupuesto && (
-        <div className="nuevo-gasto">
-          <img
-            src={iconoNuevoGasto}
-            alt="Icono Nuevo gasto"
-            onClick={handleNuevoGasto}
-          />
-        </div>
+        <>
+        <main>
+          <ListadoGastos gastos={gastos}/>
+        </main>
+          <div className="nuevo-gasto">
+            <img
+              src={iconoNuevoGasto}
+              alt="Icono Nuevo gasto"
+              onClick={handleNuevoGasto}
+            />
+          </div>
+        </>
       )}
 
       {modal && (
